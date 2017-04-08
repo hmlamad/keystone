@@ -28,7 +28,7 @@ const babelLoader = {
 	],
 };
 
-const getBase = ({ adminPath = '/keystone', entry } = {}) => {
+const getBase = ({ adminPath = '/admin', entry } = {}) => {
 	return {
 		entry: entry || {
 			admin: `${__dirname}/admin/client/App`,
@@ -105,7 +105,7 @@ export const getProd = (options) => {
 };
 
 export const getHot = (options = {}) => {
-	const { adminPath = '/keystone' } = options;
+	const { adminPath = '/admin' } = options;
 	const hmrPath = `${adminPath}/__webpack_hmr`.replace('//', '/');
 	const hotStuff = [
 		'react-hot-loader/patch',
